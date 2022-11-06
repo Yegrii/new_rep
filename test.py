@@ -1,7 +1,7 @@
 class VideoItem:
-    def __init__(self, title, descr, path):
-        self.title, self.descr, self.path = title, descr, path
-        self.rating = VideoRating()
+    def __init__(self, title, descr, rate):
+        self.title, self.descr = title, descr
+        self.rating = VideoRating(rate).rating
     
 class VideoRating:
     def __init__(self, num=0):
@@ -18,13 +18,5 @@ class VideoRating:
             self.__rating = num
         else:
             raise ValueError('неверное присваиваемое значение')
-v = VideoItem('Курс по Python ООП', 'Подробный курс по Python ООР', 'D:/videos/python_oop.mp4')
-rating = VideoRating()
-
-print(v.rating.rating) # 0
-v.rating.rating = 5
-print(v.rating.rating) # 5
-title = v.title
-descr = v.descr
-#change 1
-#change 2
+v = VideoItem('Курс по Python ООП', 'Подробный курс по Python ООР', 4)
+print(v.__dict__)
