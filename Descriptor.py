@@ -7,3 +7,7 @@ class Descriptor:
     
     def __set__(self, instance, value):
         setattr(instance, self.name, value)
+
+    def __new__(*args, **kwargs): # real signature unknown
+        """ Create and return a new object.  See help(type) for accurate signature. """
+        pass
